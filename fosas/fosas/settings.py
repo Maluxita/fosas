@@ -26,6 +26,7 @@ SECRET_KEY = 't@2gt86_tqc2==0@5j%86=a0sd)j7+z74%2&e%rx$e66@8_zej'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+GMAPS_BROWSER_TOKEN = "AIzaSyBDE24dfLESY1Y5_YmJiTZ297O7Z2RF_Ko"
 
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'desaparecido',
+    'fosas',
     'home',
 ]
 
@@ -54,6 +56,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 GEOS_LIBRARY_PATH = 'C:/OSGeo4W64/bin/geos_c.dll'
+#GDAL_LIBRARY_PATH = 'C:/OSGeo4W64/bin/gdal110.dll'
 ROOT_URLCONF = 'fosas.urls'
 
 TEMPLATES = [
