@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'desaparecido',
+    'home',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -50,7 +53,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+GEOS_LIBRARY_PATH = 'C:/OSGeo4W64/bin/geos_c.dll'
 ROOT_URLCONF = 'fosas.urls'
 
 TEMPLATES = [
@@ -77,8 +80,12 @@ WSGI_APPLICATION = 'fosas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'fosasdb',
+        'USER': 'malu',
+        'PASSWORD': 'admin1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
